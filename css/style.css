@@ -1,0 +1,270 @@
+@charset "UTF-8";
+
+.hero {
+  height: 46rem;
+  position: relative; /* .절대배치된 .hero figure의 기준 */
+  overflow: hidden;
+}
+.hero::before {
+  content: ""; /* ct */
+  /* posa+t0+l0+r0+b0 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* inset :0;*/
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+
+.hero figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* border: 5px solid #f00; */
+
+  animation: reveal-ani 1s;
+}
+
+.hero img {
+  object-position: 50% 10%; /* obp */
+}
+
+.hero .inner {
+  /* 절대 배치된 .visual-title의 기준 */
+  position: relative;
+  height: 100%;
+  z-index: 10; /* z10 */
+
+  /* background: skyblue; */
+}
+
+.visual-title {
+  /* posa+t50p+0+bg */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); /* trfty */
+  /* background: #f00; */
+  color: #fff;
+
+  width: 69rem;
+}
+
+.visual-title h2 {
+  /* fw700+fz4.8r */
+  font-weight: 700;
+  font-size: 4.8rem;
+  line-height: 1.2;
+  text-transform: uppercase; /* ttu: 대문자로 표시 */
+}
+
+.visual-title h2 strong {
+  color: var(--main-color);
+}
+.visual-title p {
+  /* fw500+fz2r+mt2.4r */
+  font-weight: 500;
+  font-size: 2rem;
+  margin-top: 2.4rem;
+}
+.visual-title .cta {
+  /* df+w20r+h4r+bg+c#fff+fw700+fz1.6r+lh1.5 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20rem;
+  height: 4.8rem;
+  background: var(--main-color);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.5;
+
+  margin-top: 3.2rem;
+}
+
+.visual-title .cta.cta.cta.cta:hover {
+  background: var(--main-dark);
+  color: #fff;
+
+  /* main 하위 섹션 전체 적용(hero제외 ): 2005 */
+  main > section + section {
+    padding: 9rem 0rem 3rem;
+  }
+}
+
+main > section:last-child {
+  padding: 9rem 0 12rem;
+}
+
+/* 사업소개 */
+.business-list {
+  display: flex;
+  gap: 2rem; /* g2r */
+}
+.business-list li {
+  border: 1px solid var(--black30);
+  /* fx1-1-a */
+  flex: 1 1 auto;
+  width: 28rem;
+  height: 30.2rem;
+  padding: 2.8rem 3.2rem;
+  /* bxsh */
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.05);
+}
+
+.business-list li dl dt {
+  /* fw700+fz2r+lh1.3+c */
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.3;
+  color: var(--main-dark);
+}
+.business-list li dl dd {
+  font-weight: 500;
+  line-height: 1.5;
+  margin-top: 1.2rem;
+}
+
+.business-list li dl dd:first-of-type {
+  margin-top: 2rem;
+}
+
+/* works */
+
+.sec-title {
+  /* fw500+fz3.2r+c */
+  font-weight: 500;
+  font-size: 3.2rem;
+  color: var(--main-color);
+}
+
+.sec-title + p {
+  /* fw500+fz2r+mt.4r */
+  font-weight: 500;
+  font-size: 2rem;
+  margin-top: 0.4rem;
+}
+
+.works-list {
+  display: flex;
+  flex-wrap: wrap; /* fxww: 줄바꿈 */
+  margin-top: 2.8rem;
+}
+
+.works-list li {
+  flex: 1 1 50%;
+  position: relative; /* 절대배치된 p의 기준 */
+  overflow: hidden;
+}
+
+.works-list figure {
+  transition: 0.4s; /* trs.4s */
+}
+.works-list li p {
+  /* posa+t50p+l50p+trft */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: 500;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.works-list li p strong {
+  display: block;
+  font-weight: 700;
+}
+
+.works-list li:hover figure {
+  transform: sacle(1.3);
+  filter: blur(10px);
+}
+
+/* news */
+.news-con {
+  display: flex;
+  gap: 6rem;
+}
+
+.news-con .news-text {
+  width: 48rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  justify-content: center;
+}
+
+.news-con .news-text h4 {
+  /* fw700+fz2.4r+c */
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--title-color);
+  margin-top: 1.8rem;
+}
+.news-con .news-text p {
+  margin-top: 1.8rem;
+}
+
+/* colum */
+.column h4 {
+  /* fw500+fz2.8+c */
+  font-weight: 500;
+  font-size: 2.8em;
+  color: var(--main-color);
+}
+
+.column h5 {
+  /* fw700+fz3.2r+c+mt1.8r */
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: var(--title-color);
+  margin-top: 1.8rem;
+}
+
+colum h5 + p {
+  margin-top: 1.8rem;
+  column-count: 2;
+  gap: 4rem;
+  text-align: justify; /* taj */
+}
+column p + p {
+  text-align: right; /* tar */
+  margin-top: 3rem;
+}
+
+.column p + p strong {
+  display: block;
+  font-weight: 700;
+}
+
+/* footer */
+.footer {
+  /* bg#333+c#fff+p5.2r-0 */
+  background: #333;
+  color: var(--white60);
+  padding: 5.2rem 0;
+}
+
+.foot-con {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse; /* fxdrr */
+}
+
+.foot-text {
+  /* fw700+fz1.4r+lh1.5 */
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.foot-text p + p {
+  /* mt.8r */
+  margin-top: 0.8rem;
+}
